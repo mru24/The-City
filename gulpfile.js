@@ -131,7 +131,7 @@ gulp.task('sitemap', function() {
       read: false
     })
     .pipe(sitemap({
-      siteUrl: 'http://www.wwproject.eu/projects/RTWC'
+      siteUrl: 'http://www.wwproject.eu'
     }))
     .pipe(gulp.dest(config.dest))
 });
@@ -141,7 +141,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build', function() {
-  sequence('clean', ['html', 'js', 'css', 'images', 'sitemap']);
+  sequence('clean', ['html', 'js', 'css', 'image', 'sitemap']);
 });
 
 gulp.task('default', ['server']);

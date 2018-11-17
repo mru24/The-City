@@ -2,7 +2,115 @@
   @media only screen and (min-width: 900px)
     @content
 
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:900')
+@import url('https://fonts.googleapis.com/css?family=Lato')
+
 *
   margin: 0
   padding: 0
   box-sizing: border-box
+body, html
+  width: 100%
+  height: 100%
+  font-family: 'Lato', sans-serif
+  .landingImage
+    background-image: url('../img/image2.jpg')
+    background-size: cover
+    background-position: bottom right
+    background-repeat: no-repeat
+    filter: blur(3px)
+    position: fixed
+    z-index: -1
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+  #landing
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    h1
+      font-family: 'Saira Condensed', sans-serif
+      font-size: 10vw
+      color: #fff
+      text-shadow: 0 0 10px #222
+    #enter
+      width: 700px
+      background: #eee
+      border-radius: 5px
+      box-shadow: 0 0 5px #222
+      font-family: 'Lato', sans-serif
+      color: #666
+      .hr
+        width: 20%
+        margin: 40px auto
+        height: 2px
+        background: red
+      p
+        padding: 0 100px
+        font-style: italic
+      nav
+        width: 80%
+        margin: 40px auto
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        a
+          height: 30px
+          line-height: 30px
+          font-size: 22px
+          text-decoration: none
+          color: #999
+          transition: .4s
+          &:hover
+            color: #444
+            border-bottom: 3px solid red
+      form
+        $bgCol: #264a99
+        width: 100%
+        background: $bgCol
+        padding: 20px
+        display: flex
+        flex-direction: row
+        justify-content: center
+        input
+          width: 80%
+          height: 35px
+          background: $bgCol
+          border: 1px solid $bgCol + 15
+          font-size: 18px
+          color: #ddd
+          padding-left: 10px
+          transition: .5s
+          &:focus
+            height: 55px
+        button
+          width: 35px
+          background: $bgCol
+          border: none
+          color: #bbb
+          font-size: 20px
+          margin-left: 10px
+          cursor: pointer
+
+  section
+    height: 100%
+    h1
+      margin-left: 10%
+      margin-top: 20px
+      color: #eee
+      font-family: 'Saira Condensed', sans-serif
+      font-size: 5em
+    .container
+      width: 80%
+      min-height: 70%
+      margin: auto
+      padding: 80px
+      background: #eee
+      color: #666
+      border: 2px solid #bbb
+      p
+        font-size: 20px

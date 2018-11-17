@@ -8,7 +8,7 @@
     "gulp-concat": "^2.6.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "gulp-cleancss": "^0.2.2",
     "gulp-copy": "^1.1.0",
