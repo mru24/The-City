@@ -6,10 +6,22 @@
   box-sizing: border-box;
 }
 
+a, a:visited, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 body, html {
   width: 100%;
   height: 100%;
   font-family: 'Lato', sans-serif;
+}
+
+@media only screen and (max-width: 900px) {
+  body, html {
+    height: auto;
+    min-height: 100%;
+  }
 }
 
 body .landingImage, html .landingImage {
@@ -88,7 +100,6 @@ body #landing #enter nav a, html #landing #enter nav a {
   height: 30px;
   line-height: 30px;
   font-size: 22px;
-  text-decoration: none;
   color: #999;
   transition: .4s;
 }
@@ -163,9 +174,52 @@ body section .container, html section .container {
 @media only screen and (max-width: 900px) {
   body section .container, html section .container {
     width: 90%;
+    padding: 20px;
   }
 }
 
 body section .container p, html section .container p {
   font-size: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  body section .container p, html section .container p {
+    font-size: 18px;
+  }
+}
+
+#mobileNav {
+  position: fixed;
+  z-index: 9999;
+  bottom: 30px;
+  right: 10px;
+  transform: translateX(200%);
+  transition: .4s;
+}
+
+#mobileNav a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  background: #daa418;
+  opacity: .75;
+  transition: .4s;
+}
+
+#mobileNav a:first-child {
+  background: #4fad44;
+}
+
+#mobileNav a:hover {
+  opacity: 1;
+}
+
+footer {
+  margin-top: 90px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #252525;
+  color: #999;
 }

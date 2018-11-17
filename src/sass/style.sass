@@ -9,10 +9,17 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+a, a:visited, a:active
+  text-decoration: none
+  color: inherit
+
 body, html
   width: 100%
   height: 100%
   font-family: 'Lato', sans-serif
+  @include bp-mobile
+    height: auto
+    min-height: 100%
   .landingImage
     background-image: url('../img/image2.jpg')
     background-size: cover
@@ -67,7 +74,6 @@ body, html
           height: 30px
           line-height: 30px
           font-size: 22px
-          text-decoration: none
           color: #999
           transition: .4s
           &:hover
@@ -121,5 +127,36 @@ body, html
       border: 2px solid #bbb
       @include bp-mobile
         width: 90%
+        padding: 20px
       p
         font-size: 20px
+        @include bp-mobile
+          font-size: 18px
+
+#mobileNav
+  position: fixed
+  z-index: 9999
+  bottom: 30px
+  right: 10px
+  transform: translateX(200%)
+  transition: .4s
+  a
+    display: inline-block
+    color: #fff
+    padding: 10px
+    border-radius: 4px
+    background: #daa418
+    opacity: .75
+    transition: .4s
+    &:first-child
+      background: #4fad44
+    &:hover
+      opacity: 1
+
+footer
+  margin-top: 90px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  background: #252525
+  color: #999
