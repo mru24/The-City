@@ -97,10 +97,10 @@ gulp.task('html', function() {
     .pipe(seo({
       list: ['og', 'se', 'schema', 'twitter'],
       meta: {
-            title: 'POLAND - Road to World Cup 2018',
-            description: 'The way of Polish Football team to World Cup 2018 finals',
+            title: 'The City',
+            description: 'The City, news, events, meet The City, meet Us',
             author: 'Val Wroblewski',
-            keywords: ['Poland', 'World', 'Cup', '2018', 'football', 'qualifications', 'Russia'],
+            keywords: ['The City', 'City', 'Events', 'News'],
             robots: {
                 index: false, // true
                 follow: true // true

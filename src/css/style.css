@@ -51,6 +51,13 @@ body #landing #enter, html #landing #enter {
   color: #666;
 }
 
+@media only screen and (max-width: 900px) {
+  body #landing #enter, html #landing #enter {
+    width: 90%;
+    margin: auto;
+  }
+}
+
 body #landing #enter .hr, html #landing #enter .hr {
   width: 20%;
   margin: 40px auto;
@@ -61,6 +68,12 @@ body #landing #enter .hr, html #landing #enter .hr {
 body #landing #enter p, html #landing #enter p {
   padding: 0 100px;
   font-style: italic;
+}
+
+@media only screen and (max-width: 900px) {
+  body #landing #enter p, html #landing #enter p {
+    padding: 0 50px;
+  }
 }
 
 body #landing #enter nav, html #landing #enter nav {
@@ -123,6 +136,12 @@ body section, html section {
   height: 100%;
 }
 
+@media only screen and (max-width: 900px) {
+  body section, html section {
+    min-height: 100%;
+  }
+}
+
 body section h1, html section h1 {
   margin-left: 10%;
   margin-top: 20px;
@@ -139,6 +158,12 @@ body section .container, html section .container {
   background: #eee;
   color: #666;
   border: 2px solid #bbb;
+}
+
+@media only screen and (max-width: 900px) {
+  body section .container, html section .container {
+    width: 90%;
+  }
 }
 
 body section .container p, html section .container p {
