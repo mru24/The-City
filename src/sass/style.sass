@@ -2,8 +2,25 @@
   @media only screen and (max-width: 900px)
     @content
 
+@mixin transition
+  transition: .3s
+
+@mixin boxShadow($offset, $color)
+  box-shadow: 0 0 $offset $color
+
+@mixin borderRadius
+  border-radius: 4px
+
+@mixin backgroundImage($imageURL)
+  background-image: url($imageURL)
+  background-size: cover
+  background-position: bottom right
+  background-repeat: no-repeat
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed:900')
-@import url('https://fonts.googleapis.com/css?family=Lato')
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400')
 
 *
   margin: 0
@@ -17,14 +34,12 @@ body, html
   width: 100%
   height: 100%
   font-family: 'Lato', sans-serif
+  font-weight: 400
   @include bp-mobile
     height: auto
     min-height: 100%
   .landingImage
-    background-image: url('../img/image2.jpg')
-    background-size: cover
-    background-position: bottom right
-    background-repeat: no-repeat
+    @include backgroundImage('../img/image2.jpg')
     filter: blur(3px)
     position: fixed
     z-index: -1
@@ -47,10 +62,11 @@ body, html
     #enter
       width: 700px
       background: #eee
-      border-radius: 5px
-      box-shadow: 0 0 5px #222
       font-family: 'Lato', sans-serif
       color: #666
+      position: relative
+      @include borderRadius
+      @include boxShadow(5px, #222)
       @include bp-mobile
         width: 90%
         margin: auto
@@ -75,11 +91,12 @@ body, html
           line-height: 30px
           font-size: 22px
           color: #999
-          transition: .4s
+          @include transition
           &:hover
             color: #444
             border-bottom: 3px solid red
       form
+        // form background color
         $bgCol: #264a99
         width: 100%
         background: $bgCol
@@ -95,7 +112,7 @@ body, html
           font-size: 18px
           color: #ddd
           padding-left: 10px
-          transition: .5s
+          @include transition
           &:focus
             height: 55px
         button
@@ -119,19 +136,119 @@ body, html
       font-size: 5em
     .container
       width: 80%
+      height: auto
       min-height: 70%
       margin: auto
-      padding: 80px
-      background: #eee
+      background: #fff
       color: #666
       border: 2px solid #bbb
+      @include boxShadow(20px, #666)
       @include bp-mobile
         width: 90%
-        padding: 20px
       p
         font-size: 20px
+        font-weight: 300
+        padding: 80px 80px 10px 80px
         @include bp-mobile
           font-size: 18px
+          padding: 15px
+
+section#first
+  height: auto
+  min-height: 100%
+  .container
+    .eventsWrapper
+      width: 80%
+      margin: auto
+      .events
+        float: left
+        width: 50%
+        @include bp-mobile
+          clear: both
+          width: 100%
+        a
+          width: 100%
+          float: left
+          display: block
+          margin-left: 60px
+          margin-top: 20px
+          color: #888
+          @include transition
+          &:hover
+            color: #222
+          @include bp-mobile
+            margin: 15px
+          i
+            margin-left: 15px
+            color: green
+            font-size: 22px
+            @include transition
+            opacity: 0
+        a:hover i
+          opacity: 1
+      img
+        float: right
+        opacity: .9
+        max-width: 50%
+        @include bp-mobile
+          clear: both
+          max-width: 100%
+
+section#third
+  height: auto
+  min-height: 100%
+  .container
+    form
+      $bgCol: #6bc0fe
+      $height: 30px
+      $textHeight: $height + 90
+      width: 60%
+      margin: 20px auto
+      padding: 40px
+      background: $bgCol
+      @include borderRadius
+      @include bp-mobile
+        width: 90%
+      .formControl
+        label, input, textarea
+          width: 100%
+          margin-bottom: 10px
+          @include transition
+        input, textarea
+          background: $bgCol
+          border: none
+          border-bottom: 1px solid #888
+          padding-left: 10px
+          color: white
+          font-size: 18px
+        label
+          color: #fff
+          display: block
+          margin-bottom: 5px
+        input
+          height: $height
+          &:focus
+            height: $height + 15
+        textarea
+          resize: none
+          height: $textHeight
+          &:focus
+            height: $textHeight + 15
+      button
+        display: block
+        margin: 20px auto
+        margin-bottom: 0
+        padding: 15px 25px
+        border: none
+        background: #f5a409
+        color: #fff
+        cursor: pointer
+        @include borderRadius
+        @include boxShadow(10px, #666)
+        @include transition
+        &:hover
+          @include boxShadow(2px, #666)
+
 
 #mobileNav
   position: fixed
@@ -139,15 +256,15 @@ body, html
   bottom: 30px
   right: 10px
   transform: translateX(200%)
-  transition: .4s
+  @include transition
   a
     display: inline-block
     color: #fff
     padding: 10px
-    border-radius: 4px
     background: #daa418
     opacity: .75
-    transition: .4s
+    @include borderRadius
+    @include transition
     &:first-child
       background: #4fad44
     &:hover
@@ -160,3 +277,6 @@ footer
   text-align: center
   background: #252525
   color: #999
+
+.clearFloat
+  clear: both
